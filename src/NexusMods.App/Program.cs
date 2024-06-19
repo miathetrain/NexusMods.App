@@ -186,7 +186,7 @@ public class Program
                 .AddSettings<TelemetrySettings>()
                 .AddSettings<LoggingSettings>()
                 .AddSettings<ExperimentalSettings>()
-                .AddSettings<GameLocatorSettings>()
+               // .AddSettings<GameLocatorSettings>()
             )
             .ConfigureLogging((_, builder) => builder
                 .ClearProviders()
