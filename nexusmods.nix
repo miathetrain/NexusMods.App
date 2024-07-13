@@ -20,10 +20,8 @@ buildDotnetModule rec {
     hash = "sha256-KYwDvZMe7PQjhBr/Sb6QVkzf1npVPMjCriacGIKW4SQ=";
   };
 
-  # projectFile = "src/NexusMods.App/NexusMods.App.csproj";
   projectFile = [
     "src/NexusMods.StandardGameLocators/NexusMods.StandardGameLocators.csproj"
-    "tests/NexusMods.StandardGameLocators.Tests/NexusMods.StandardGameLocators.Tests.csproj"
     "src/NexusMods.App.Cli/NexusMods.App.Cli.csproj"
     "src/NexusMods.App/NexusMods.App.csproj"
     "src/NexusMods.DataModel/NexusMods.DataModel.csproj"
@@ -90,10 +88,6 @@ buildDotnetModule rec {
 
   dotnet-sdk = dotnetCorePackages.sdk_8_0;
   dotnet-runtime = dotnetCorePackages.sdk_8_0;
-
-  # preConfigure = ''
-  #   git submodule update --init --recursive
-  # '';
 
   nativeBuildInputs = with pkgs; [
     copyDesktopItems
