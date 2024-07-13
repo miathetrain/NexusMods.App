@@ -9,7 +9,7 @@ with import <nixpkgs> {};
 
     shellHook = ''
       DOTNET_ROOT="${dotnetPkg}";
-      export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${ # glibc polkit
+      export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:${
         with pkgs;
           lib.makeLibraryPath [pkg-config fontconfig xorg.libX11 xorg.libICE xorg.libSM]
       }"
